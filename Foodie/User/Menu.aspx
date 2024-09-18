@@ -16,10 +16,11 @@
             </div>
 
             <ul class="filters_menu">
-                <li class="active" data-filter="*">Tümü</li>
+                <li class="active" data-filter="*" data-id="0">Tümü</li>
                 <asp:Repeater ID="rCategory" runat="server">
                     <ItemTemplate>
-                        <li data-filter=".<%# Regex.Replace(Eval("Name").ToString().ToLower(),@"\s+","") %>"><%# Eval("Name") %></li>
+                        <li data-filter=".<%# Regex.Replace(Eval("Name").ToString().ToLower(),@"\s+","") %>"
+                            data-id="<%# Eval("CategoryId") %>" ><%# Eval("Name") %></li>
                     </ItemTemplate>
                 </asp:Repeater>
             </ul>

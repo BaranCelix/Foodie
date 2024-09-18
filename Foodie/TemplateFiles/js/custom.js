@@ -1,3 +1,7 @@
+/*const { has } = require("../../assets/js/classie/classie");*/
+
+
+
 // to get current year
 function getYear() {
     var currentDate = new Date();
@@ -10,6 +14,14 @@ getYear();
 
 // isotope js
 $(window).on('load', function () {
+
+    var $grid = $(".grid").isotope({
+        itemSelector: ".all",
+        percentPosition: false,
+        masonry: {
+            columnWidth: ".all"
+        }
+    });
     $('.filters_menu li').click(function () {
         $('.filters_menu li').removeClass('active');
         $(this).addClass('active');
@@ -20,19 +32,57 @@ $(window).on('load', function () {
         })
     });
 
-    var $grid = $(".grid").isotope({
-        itemSelector: ".all",
-        percentPosition: false,
-        masonry: {
-            columnWidth: ".all"
+    
+
+    $(document).ready(function () {
+        //Read a pages Get URL variables & return them as an associative aaray.
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+
+        var id = getUrlVars()["id"];
+        if (id > 0) {
+            $('.filters_menu li').removeClass('active');
         }
-    })
+
+        $('.filters_menu li').each(function () {
+            //Checks if it is the same on the address bar
+            if (id == this.attributes["data-id"].value) {
+                $(this).closest("li").addClass("active");
+
+                var data = $(this).attr('data-filter');
+                $grid.isotope({
+                    filter: data
+                })
+
+
+                return;
+            }
+
+        });
+
+
+    });
+
+
+
 });
 
+
+
+
+
 // nice select
-$(document).ready(function() {
+$(document).ready(function () {
     $('select').niceSelect();
-  });
+});
 
 /** google_map js **/
 function myMap() {
