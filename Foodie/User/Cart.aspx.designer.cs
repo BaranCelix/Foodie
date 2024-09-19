@@ -11,7 +11,7 @@ namespace Foodie.User
 {
 
 
-    public partial class Menu
+    public partial class Cart
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace Foodie.User
         protected global::System.Web.UI.WebControls.Label lblMsg;
 
         /// <summary>
-        /// rCategory denetimi.
+        /// rCartItem denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rCategory;
-
-        /// <summary>
-        /// rProducts denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rProducts;
+        protected global::System.Web.UI.WebControls.Repeater rCartItem;
     }
 }
