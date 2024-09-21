@@ -96,7 +96,7 @@
 
                                 </asp:LinkButton>
 
-                               <%-- <a href='<%= Session["userId"] != null ? "Profile.aspx" : "Registration.aspx" %>' class="user_link">
+                                <%-- <a href='<%= Session["userId"] != null ? "Profile.aspx" : "Registration.aspx" %>' class="user_link">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                 </a>--%>
 
@@ -153,6 +153,9 @@
                                         <g>
                                         </g>
                                     </svg>
+                                    <span class="badge rounded-pill bg-warning mb-4">
+                                        <% Response.Write(Session["cartCount"]); %>
+                                    </span>
                                 </a>
                                 <div class="form-inline">
                                     <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -208,11 +211,12 @@
                     </div>
                     <div class="col-md-4 footer-col">
                         <div class="footer_detail">
-                            <a href="Default.aspx" class="footer-logo">LezizKap
+                            <a href="Default.aspx" class="footer-logo">
+                                LezizKap
                             </a>
 
                             <p>
-                                Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                                "Lezzet yolculuğunuza bizimle çıkın. Her damak tadına uygun, özenle hazırlanmış yemekler bir tık uzağınızda!"
                             </p>
                             <div class="footer_social">
                                 <a href="">
