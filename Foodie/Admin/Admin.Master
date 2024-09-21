@@ -114,8 +114,10 @@
                                 <i class="ti-menu"></i>
                             </a>
 
-                            <a href="index.html">
-                                <img class="img-fluid" src="../assets/images/logo.png" alt="Theme-Logo" />
+                            <a href="Dashboard.aspx">
+                                <%--<img class="img-fluid" src="../assets/images/logo.png" alt="Theme-Logo">--%>
+
+                                <h3 class="pl-2">Admin Paneli</h3>
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -206,7 +208,7 @@
                                 </div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="#">
+                                        <a href="OrderStatus.aspx">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Teslimat Durumu</span>
                                             <span class="pcoded-mcaret"></span>
@@ -226,7 +228,7 @@
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Kulllanıcı Geri Bildirimleri</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="#">
+                                        <a href="Contacts.aspx">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">İletişim</span>
                                             <span class="pcoded-mcaret"></span>
@@ -237,7 +239,7 @@
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Raporlar</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="#">
+                                        <a href="Report.aspx">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Satış Raporları</span>
                                             <span class="pcoded-mcaret"></span>

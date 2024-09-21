@@ -149,7 +149,78 @@
                                         <%--<% Sipariş Geçmişi %>--%>
                                         <div class="tab-pane fade" id="connectedServices" role="tabpanel"
                                             aria-labelledby="ConnectedServices-tab">
-                                            <h3>Sipariş Geçmişi</h3>
+                                            <asp:Repeater ID="rPurchaseHistory" runat="server"
+                                                OnItemDataBound="rPurchaseHistory_ItemDataBound">
+                                                <ItemTemplate>
+                                                    <div class="container">
+                                                        <div class="row pt-1 pb-1" style="background-color: lightgray">
+                                                            <div class="col-4">
+                                                                <span class="badge badge-pill badge-dark text-white">
+                                                                    <%# Eval("SrNo") %>
+                                                                </span>
+                                                                Ödeme Şekli: <%# Eval("PaymentMode").ToString() == "cod" ? "Kapıda Ödeme" : Eval("PaymentMode").ToString().ToUpper() %>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <%# string.IsNullOrEmpty( Eval("CardNo").ToString()) ? "" : "Kart No : " + Eval("CardNo") %>
+                                                            </div>
+                                                            <div class="col-2" style="text-align: end">
+                                                                <a href="Invoice.aspx?id=<%# Eval("PaymentId") %>" class="btn btn-info btn-sm">
+                                                                    <i class="fa fa-download mr-2"></i>Fatura</a>
+                                                            </div>
+                                                        </div>
+                                                        <asp:HiddenField ID="hdnPaymentId" runat="server" Value='<%#Eval("PaymentId")%>' />
+                                                        <asp:Repeater ID="rOrders" runat="server">
+                                                            <HeaderTemplate>
+                                                                <table class="table data-table-export table-responsive-sm table-bordered table-hover">
+                                                                    <thead class="bg-dark text-white">
+                                                                    <thead class="bg-dark text-white">
+
+                                                                        <tr>
+
+                                                                            <th>Ürün Adı</th>
+                                                                            <th>Birim Fİyat</th>
+                                                                            <th>Miktar</th>
+                                                                            <th>Toplam Fiyat</th>
+                                                                            <th>OrderId</th>
+                                                                            <th>Durum</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                            </HeaderTemplate>
+                                                            <ItemTemplate>
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:Label ID="lblName" runat="server" Text='<%#Eval("Name")%>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblPrice" runat="server" Text='<%# string.IsNullOrEmpty(Eval("Price").ToString()) ? "" : "₺" + Eval("Price")%>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblQuantity" runat="server" Text='<%#Eval("Quantity")%>'></asp:Label>
+                                                                    </td>
+                                                                    <td>₺<asp:Label ID="lblTotalPrice" runat="server" Text='<%#Eval("TotalPrice")%>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblOrderNo" runat="server" Text='<%#Eval("OrderNo")%>'></asp:Label>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>'
+                                                                            CssClass='<%# Eval("Status").ToString() == "Teslim Edildi" ? "badge badge-success" : "badge badge-warning" %>'></asp:Label>
+
+                                                                    </td>
+
+                                                                    
+
+                                                            </ItemTemplate>
+                                                            <FooterTemplate>
+                                                                </tbody>
+                                                                </table>
+                                                            </FooterTemplate>
+                                                        </asp:Repeater>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </div>
                                         <%--<% Sipariş Geçmişi Sonu %>--%>
                                     </div>

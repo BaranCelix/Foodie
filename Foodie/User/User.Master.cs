@@ -32,11 +32,14 @@ namespace Foodie.User
             if (Session["userId"] != null)
             {
                 lblLoginOrLogout.Text = "Çıkış Yap";
+                Utils utils = new Utils();
+                Session["cartCount"] = utils.cartCount(Convert.ToInt32(Session["userId"])).ToString();
 
             }
             else
             {
                 lblLoginOrLogout.Text = "Giriş Yap";
+                Session["cartCount"] = "0";
             }
         }
 

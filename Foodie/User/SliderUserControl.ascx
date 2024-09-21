@@ -12,7 +12,7 @@
                       Fast Food Restaurant
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      "Lezzet dolu anlar, her ısırıkta damakta kalıcı izler bırakır. LezizKap ile en taze malzemelerden hazırlanan burgerler ve çıtır patatesler sizleri bekliyor. Hızlı, kaliteli ve doyurucu bir yemek deneyimi için hemen sipariş verin!"
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">

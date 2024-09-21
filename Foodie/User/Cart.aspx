@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Foodie.User.Cart" %>
 
 <%@ Import Namespace="Foodie" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -73,14 +74,14 @@
                     <tr>
                         <td colspan="3"></td>
                         <td class="pl-lg-5">
-                            <b>Toplam:-</b>
+                            <b>Toplam:</b>
                         </td>
                         <td>₺<%# Session["grandTotalPrice"] != null ? Session["grandTotalPrice"].ToString() : "0.00" %></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td colspan="2" class="continue__btn">
-                            <a href="Menu.aspx" class="btn btn-info"><i class="fa fa-arrow-circle-left mr-2">Alışverişe Devam Et</i> </a>
+                            <a href="Menu.aspx" class="btn btn-info"><i class="fa fa-arrow-circle-left mr-2"> Alışverişe Devam Et </i> </a>
                         </td>
 
                         <td>
@@ -90,7 +91,7 @@
                         </td>
                           <td>
                             <asp:LinkButton ID="lbCheckout" runat="server" CommandName="checkout" CssClass="btn btn-success">
-                                Checkout<i class="fa fa-arrow-circle-right mr-2"></i>
+                                 Satın al     <i class="fa fa-arrow-circle-right mr-2"></i>
                             </asp:LinkButton>
                         </td>
                     </tr>   
