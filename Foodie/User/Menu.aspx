@@ -118,6 +118,4 @@
         </div>
     </section>
 
-    <!-- end food section -->
-
-</asp:Content>
+    </asp:Content>
